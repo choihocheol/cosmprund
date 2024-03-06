@@ -229,6 +229,13 @@ func pruneAppState(home string) error {
 		for key, value := range akashKeys {
 			keys[key] = value
 		}
+	} else if app == "bera" {
+		beraKeys := types.NewKVStoreKeys(
+			"evm",     // evm.StoreKey,
+		)
+		for key, value := range beraKeys {
+			keys[key] = value
+		}
 	} else if app == "sentinel" {
 		sentinelKeys := types.NewKVStoreKeys(
 			"authz",        // authzkeeper.StoreKey,
